@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+
+<body>
+    Qual a nota do aluno? <input type="text" id="input_notaAluno">
+    <br><br>
+    Qual a frequência do aluno? <input type="text" id="input_freqAluno">
+    <br><br>
+    <button onclick="analisar()"> Analisar aluno</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var nota = input_notaAluno.value
+        var frequencia = input_freqAluno.value
+
+        if(nota >= 0 && nota < 6) {
+            div_mensagem.innerHTML = `Aluno ficou abaixo da média`
+
+        }else if(nota <= 8) {
+            div_mensagem.innerHTML = `Aluno ficou na média`
+
+        }else{
+            div_mensagem.innerHTML = `Aluno acima da média`
+
+        } 
+
+        if(frequencia < 0 || frequencia > 100) {
+            div_mensagem.innerHTML = ` `
+            alert('Onde já se viu frequência menor que 0 ou maior que 100?!')
+           
+
+        }else if(frequencia >= 75) {
+            div_mensagem.innerHTML += `<br> Aluno aprovado por frequência`
+    
+        }else if(frequencia < 75) {
+            div_mensagem.innerHTML += `<br> Aluno reprovado por frequência`
+        
+        }
+
+        if (nota < 0 || nota > 10) {
+            div_mensagem.innerHTML = ` `
+            alert('Onde já se viu nota menor que 0 ou maior que 10?!')
+
+        } 
+    }
+</script>

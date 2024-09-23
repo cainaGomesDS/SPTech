@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+
+<body>
+    Qual o nome da empresa? <input type="text" id="input_nomeEmpresa">
+    <br><br>
+    Qual o valor da bolsa? <input type="text" id="input_valorBolsa">
+    <br><br>
+    Qual o valor do VR da empresa? <input type="text" id="input_valorVR">
+    <br><br>
+    Qual o tempo de deslocamento? (minutos) <input type="text" id="input_deslocamentoFaculdadeEmpresa">
+    <br><br>
+    <button onclick="analisar()">É preferida?</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var empresa = input_nomeEmpresa.value
+        var bolsa = input_valorBolsa.value >= 1800
+        var vr = input_valorVR.value >= 20
+        var deslocamento = input_deslocamentoFaculdadeEmpresa.value <= 30
+
+        if (bolsa || vr || deslocamento) {
+            div_mensagem.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+        } else {
+            div_mensagem.innerHTML = `A empresa ${empresa} está fora da sua lista`
+        }
+
+    }
+</script>

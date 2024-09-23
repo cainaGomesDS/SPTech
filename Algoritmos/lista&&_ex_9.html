@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    Intervalo da altura dos pilotos: <br>
+    entre <input type="text" id="input_valorInicial"> e
+     <input type="text" id="input_valorFinal">
+    <br><br>
+    Nome e altura do piloto: <br>
+    nome <input type="text" id="input_nomePiloto"> 
+    altura <input type="text" id="input_alturaPiloto">
+    <br><br>
+    <button onclick="analisar()">Verificar candidato</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var alturaInicial = input_valorInicial.value
+        var alturaFinal = input_valorFinal.value
+
+        var nome = input_nomePiloto.value
+        var altura = input_alturaPiloto.value
+
+        
+
+        if(alturaInicial < 1 || alturaFinal < alturaInicial){
+            alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial")
+            
+        }else if(altura >= alturaInicial && altura <= alturaFinal){
+            div_mensagem.innerHTML += `<br><br> O candidato ${nome}, com altura de ${altura} metros, participará do processo de seleção de piloto`
+
+        }else if(altura < alturaInicial || altura > alturaFinal){
+            div_mensagem.innerHTML += `<br><br> Infelizmente, o candidato ${nome} com altura de ${altura} metros, não atende os requisitos da seleção`
+
+        }
+    }
+</script>

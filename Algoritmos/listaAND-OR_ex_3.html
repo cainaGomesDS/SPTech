@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    Tipo de passageiro:
+    <select name="passageiro" id="tipoPassageiro">
+        <option value="comum">Comum</option>
+        <option value="estudante">Estudante</option>
+        <option value="idosoPne">Idoso/PNE</option>
+    </select>
+
+    <br><br>
+
+    Tipo de passagem:
+    <select name="passagem" id="tipoPassagem">
+        <option value="unica">Passagem única</option>
+        <option value="integracao">Integração</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="analisar()">Simulador preço</button>
+
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var unicaValor = 4.40
+        var integracaoValor = 5.90
+        var passageiroTipo = tipoPassageiro.value
+        var passagemTipo = tipoPassagem.value
+
+        if (passageiroTipo == "comum" && (passagemTipo == "unica" || passagemTipo == "integracao")) {
+
+            if (passagemTipo == "unica") {
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${unicaValor}`
+            } else {
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${integracaoValor}`
+            }
+        } else if (passageiroTipo == "estudante" && (passagemTipo == "unica" || passagemTipo == "integracao")) {
+            unicaValor *= 50 / 100
+            integracaoValor *= 50 / 100
+
+            if (passagemTipo == "unica") {
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${unicaValor}`
+            }else{
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${integracaoValor}`
+            }
+        }else{
+            unicaValor *= 0
+            integracaoValor *= 0
+
+            if (passagemTipo == "unica") {
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${unicaValor}`
+            }else{
+                div_mensagem.innerHTML = `Valor da passagem escolhida: R$${integracaoValor}`
+            }
+            
+        }
+    }
+
+</script>
