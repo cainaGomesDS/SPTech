@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+    <style>
+        body{
+            
+        }
+        img{
+            height: 150px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="sortear()">Sortear Time</button>
+    <br><br>
+    <div id="div_mensagem" class="principal"></div>
+</body>
+</html>
+
+<script>
+    function sortear(){
+        var mensagem = ''
+        var sorteio = Math.random();
+        var numerosSorteio = sorteio * 3 + 1
+        // gera um número de 0 até 2.9999 e soma com 1 deslcando o minimo para 1 e o resto para 3.9999
+        var sorteio_inteiro = numerosSorteio.toFixed(0)
+       
+
+        if(sorteio_inteiro == 3){
+            mensagem = '<img src="https://i.pinimg.com/474x/4d/07/c8/4d07c88292240fe9caaec5aa8a67a6f5.jpg" />'
+            mensagem += '<audio src="https://www.youtube.com/shorts/-EuBzxePH6w?app=desktop" autoplay></audio>';
+        }else if(sorteio_inteiro == 1){
+            mensagem = '<img src="https://i.pinimg.com/736x/b5/c3/1e/b5c31e3cd59dc782c1ea6d2a07242052.jpg"/>'
+        }else if( sorteio_inteiro == 2){
+            mensagem = '<img src="https://s2-ge.glbimg.com/VKG42-3nfMa-Gi62nQkzcs2KCVQ=/0x0:800x515/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/J/m/64Xd9ZTLA9k3ojqWla3Q/escudo-spfc.jpg"/>'
+        }else if(sorteio_inteiro == 4){
+            mensagem = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Santos_Logo.png/240px-Santos_Logo.png"/>'
+        }
+        
+        div_mensagem.innerHTML = `${sorteio_inteiro} <br><br> ${mensagem}`
+    }
+</script>
