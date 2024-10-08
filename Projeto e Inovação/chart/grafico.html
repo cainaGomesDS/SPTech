@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Dashboard ChartJS</title>
+    <style>
+        .graf{
+            height: 40vh;
+            width: 40vw;
+            background-color: oldlace;
+            
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="graf">
+        <canvas id="GraficoLinha"></canvas>
+    </div>
+
+    <div class="graf">
+        <canvas id="GraficoBarras"></canvas>
+    </div>
+
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const linhas = document.getElementById('GraficoLinha');
+  const barras = document.getElementById('GraficoBarras')
+
+  new Chart(linhas, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+        
+      },
+      {
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1
+        
+      }]
+    }, 
+
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  new Chart(barras, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1
+      },
+      {
+        label: 'Umidade',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1
+      }]
+    }, 
+
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
