@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 18</title>
+    <style>
+        .imagem{
+            height: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    Quantas coquinhas você acha que já bebeu na vida? <input type="text" id="input_cocas">
+    <br><br>
+    <button onclick="analisar()"> Ver quantidade </button>
+    <br><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    var segredo = 'Chegou aqui user? Então você é fã de coquinha gelada hmmm'
+    console.log(segredo);
+    
+    function analisar(){
+        var numCoquinhas = Number(input_cocas.value);
+        var mensagem = '';
+        
+        for(var coca = 1; coca <= numCoquinhas; coca++){
+            mensagem += `<img class="imagem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMyT78pWOkX4fIf6Lq2IA7-NsXLILFZ7U_A&s"/>`
+        }
+        div_mensagem.innerHTML = mensagem;
+        
+    }
+</script>

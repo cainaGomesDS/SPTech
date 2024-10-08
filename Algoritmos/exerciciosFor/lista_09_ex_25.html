@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 25</title>
+</head>
+
+<body>
+    Informe um número (entre 0 e 100):<input type="number" id="input_numUser">
+    <br><br>
+    <button onclick="analisar()">Ver divisores</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var numero = Number(input_numUser.value);
+        var primo = 0;
+        var mensagem = '';
+        
+        if (numero < 0 || numero > 100) {
+            alert('Ficou curioso? Insira um número entre 0 e 100!')
+        } else {
+            for (var contagem = 1; contagem <= numero; contagem++) {
+
+                if (numero % 1 == 0 && numero % 2 == 1 && numero % contagem == 0 || numero == 2) {
+                    primo++
+                    mensagem += `${contagem}<br><br>`
+                }
+                else if (numero % contagem == 0) {
+                    mensagem += `${contagem} <br><br>`
+                }
+            }
+        }
+
+        if (primo == 2) {
+            mensagem += `O número ${numero} é primo`
+        }
+        
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>

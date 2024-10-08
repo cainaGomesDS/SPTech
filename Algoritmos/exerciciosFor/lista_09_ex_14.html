@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 14</title>
+</head>
+
+<body>
+    Informe o mínimo: <input type="number" id="input_min">
+    <br><br>
+    Informe o máximo: <input type="number" id="input_max">
+    <br><br>
+    <button onclick="analisar()">Curto 3 e 5!</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var min = Number(input_min.value);
+        var max = Number(input_max.value);
+        var mensagem = ''
+
+        for (var contagem = min; contagem <= max; contagem++) {
+
+            if (contagem % 3 == 0 && contagem % 5 == 0) {
+                mensagem += 'É TRI!É PENTA! <br>'
+            } else if (contagem % 5 == 0) {
+                mensagem += 'É PENTA! <br>'
+            } else if (contagem % 3 == 0) {
+                mensagem += 'É TRI! <br>'
+            } else {
+                mensagem += `${contagem} <br>`
+
+            }
+
+        }
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>
