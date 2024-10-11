@@ -1,0 +1,104 @@
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f5f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #37474f;
+    width: 20%;
+    color: white;
+    padding: 20px;
+}
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    border-radius:100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.infoProfile{
+    width: 100px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #dce6ee;
+    border: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   margin: 10px;
+    
+}
+
+.content .sectionKpi{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+.content .sectionKpi .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #f0f5f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 30px;
+    width: 250px;
+}
+
+.content .sectionGraficos{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 400px;
+}
+
+.content .linhaPizza {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100px;
+}
+
+.content .linhaPizza .graficoDupla{
+    background-color: #f0f5f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px;
+    size: 40px;
+}
+
+/* .content .sectionGraficos .barras canvas{
+    width: 200px;
+} */
+

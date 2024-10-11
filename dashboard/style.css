@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #37474f;
+    width: 250px;
+    height: 100vh;
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu {
+    margin-top: 30px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.content {
+    margin-left: 280px;
+    padding: 20px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+}
+
+.chart {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+}

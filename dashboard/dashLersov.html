@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lersov Data</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body style="display: flex;">
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" alt="Profile" />
+      <div class="infoProfile">
+        <h3>Frizzarini</h3>
+        <p>frizza@email.com</p>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#">Dashboard</a>
+      <a href="#">Histórico de fluxo</a>
+      <a href="#"></a>
+
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="sectionKpi">
+      <div class="card">
+        <h3>Total de pessoas no estabelecimento(dia)</h3>
+        <p>10.140</p>
+      </div>
+      <div class="card">
+        <h3>Setor mais popular (dia)</h3>
+        <p>Higiene e Limpeza</p>
+      </div>
+      <div class="card">
+        <h3>Corredor com mais fluxo de pessoas (dia)</h3>
+        <p>Corredor 3</p>
+      </div>
+    </div>
+
+    <div class="sectionGraficos">
+      <!-- porcentagem na div pai do grafico -->
+      <div class="linhaPizza">
+        <div class="graficoDupla" style="display: flex; flex-direction: column; width: 60%;">
+          <h4>Bar Chart</h4>
+          <canvas id="barChart" class="chart"></canvas>
+        </div>
+
+        <div class="graficoDupla" style="display: flex; flex-direction: column; width: 60%;">
+          <h4>Line Chart</h4>
+          <canvas id="lineChart" class="chart"></canvas>
+        </div>
+      </div>
+      <div class="pizza" style="display: flex; flex-direction: column; width: 20%;">
+        <h4>Pie Chart</h4>
+        <canvas id="pieChart" class="chart"></canvas>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Gráfico de Barras
+  const ctxBar = document.getElementById('barChart');
+  new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ['16:00', '17:00', '18:00', '19:00', '20:00', '21:00'],
+      datasets: [{
+        label: '# of Votes',
+        data: [500, 250, 550, 700, 600, 220],
+        borderWidth: 1,
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderColor: 'rgba(75, 192, 192, 1)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Gráfico de Linhas
+  const labelsLine = ['16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+  const dataLine = {
+    labels: labelsLine,
+    datasets: [{
+      label: 'My First Dataset',
+      data: [400, 550, 658, 600, 300, 240],
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1
+    }]
+  };
+
+  const configLine = {
+    type: 'line',
+    data: dataLine,
+  };
+
+  const ctxLine = document.getElementById('lineChart');
+  new Chart(ctxLine, configLine);
+
+  // Gráfico de Pizza
+  const dataPie = {
+    labels: ['Red', 'Blue', 'Yellow'],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [300, 50, 100],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  const configPie = {
+    type: 'pie',
+    data: dataPie,
+  };
+
+  const ctxPie = document.getElementById('pieChart');
+  new Chart(ctxPie, configPie);
+</script>
